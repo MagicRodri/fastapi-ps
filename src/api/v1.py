@@ -1,5 +1,6 @@
 from fastapi import APIRouter
-from users.routers import router as user_router
+from quizzes.routers import router as quizzes_router
+from users.routers import router as users_router
 
 router = APIRouter()
 
@@ -7,4 +8,5 @@ router = APIRouter()
 def hello_api_v1():
     return {"detail": "Hello API V1!"}
 
-router.include_router(user_router)
+router.include_router(users_router)
+router.include_router(quizzes_router)

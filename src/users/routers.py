@@ -1,4 +1,4 @@
-from db.session import get_db, get_engine
+from db.session import get_db
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from users import crud, schemas

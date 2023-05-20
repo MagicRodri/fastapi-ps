@@ -4,7 +4,7 @@ from .models import User
 from .schemas import UserCreate
 
 
-def create_user(db:Session, user:UserCreate):
+def create_user(db:Session, user:UserCreate) -> User:
     hashed_password = "fakehashed" + user.password
     db_user = User(username=user.username, email=user.email, hashed_password=hashed_password)
     db.add(db_user)
