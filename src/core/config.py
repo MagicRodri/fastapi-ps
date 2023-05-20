@@ -3,8 +3,8 @@ from typing import Any, Dict, Optional
 
 from pydantic import BaseSettings, PostgresDsn, validator
 
-SRC_DIR = Path('__file__').resolve().parent
-env_path = SRC_DIR / '.env'
+BASE_DIR = Path('__file__').resolve().parent
+env_path = BASE_DIR / '.env'
 
 
 class Settings(BaseSettings):
@@ -32,7 +32,7 @@ class Settings(BaseSettings):
             path=f"/{values.get('POSTGRES_DB') or ''}",
         )
 
-    MEDIA_ROOT: str = str(SRC_DIR / 'media')
+    MEDIA_ROOT: str = str(BASE_DIR / 'media')
 
     class Config:
         env_file = env_path
