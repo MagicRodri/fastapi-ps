@@ -33,17 +33,20 @@ example response:
     {
         "id":120010,
         "question":"Sousa was instrumental in the design of the sousaphone, a bass one of these with an upright bell",
-        "answer":"a tuba","created_at":"2022-12-30T19:54:27.779000"
+        "answer":"a tuba",
+        "created_at":"2022-12-30T19:54:27.779000"
     },
     {
         "id":132555,
         "question":"Old-world monkeys, like our friend the patas, don't have prehensile these, many new-world monkeys do",
-        "answer":"tails","created_at":"2022-12-30T20:11:33.615000"
+        "answer":"tails",
+        "created_at":"2022-12-30T20:11:33.615000"
     },
     {
         "id":151330,
         "question":"Wrecking Crew drummer Hal Blaine used tire chains to lay down the crashing sounds on this Simon & Garfunkel No. 1",
-        "answer":"\"Bridge Over Troubled Water\"","created_at":"2022-12-30T20:37:25.632000"
+        "answer":"\"Bridge Over Troubled Water\"",
+        "created_at":"2022-12-30T20:37:25.632000"
     }
 ]
 ```
