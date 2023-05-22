@@ -9,13 +9,16 @@ git clone https://github.com/MagicRodri/fastapi-ps.git
 POSTGRES_USER=postgres
 POSTGRES_PASSWORD=postgres
 POSTGRES_DB=postgres
-POSTGRES_HOST=db
+POSTGRES_SERVER=db
 ```
-## 3. Run docker-compose up --build
+## 3. Run
+```bash 
+docker-compose up --build
+```
 ## 4. The app will be available at http://localhost:8000
 
 # Description
-## The app has 2 main endpoints for two tasks:
+## The app has the following endpoints:
 ## 1. /api/v1/quizzes/random - POST returns a list of random quizzes with detail from https://jservice.io/api/ . The number of quizzes is specified in the request body.
 Example request:
 ```bash
@@ -92,7 +95,7 @@ example response:
 }
 ```
 
-## 4. /api/v1/users/records/<uuid:id>/<int:user_id> - Download the record file.
+## 4./api/v1/users/records/<uuid:id>/<int:user_id> - Download the record file.
 Example request:
 ```bash
 curl -O "http://127.0.0.1:8000/api/v1/users/records/642fab15-a143-4ee9-86cf-e7861476d3e1/2"
