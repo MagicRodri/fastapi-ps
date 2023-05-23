@@ -2,7 +2,7 @@ import mimetypes
 import uuid
 
 from core.config import settings
-from core.utils import save_media_file
+from core.utils import save_wav_to_mp3
 from db.session import get_db
 from fastapi import APIRouter, Depends, File, HTTPException, UploadFile, status
 from fastapi.responses import FileResponse
@@ -25,7 +25,7 @@ def create_user(user: schemas.UserBase, db: Session = Depends(get_db)):
 
 
 @router.post("/records")
-async def upload_user_record(payload: schemas.UserIn,
+def upload_user_record(payload: schemas.UserIn,
                              file: UploadFile = File(...,
                                                      media_type='audio/x-wav'),
                              db: Session = Depends(get_db)):
@@ -43,7 +43,7 @@ async def upload_user_record(payload: schemas.UserIn,
             status_code=400,
             detail="Invalid file type. Only WAV audio files are allowed.")
 
-    file_path = await save_media_file(file=file,
+    file_path = save_wav_to_mp3(file=file,
                                       directory=f"records/{db_user.id}")
     db_record = crud.create_record(db=db, user=db_user, file=file_path)
     download_url = f"{settings.API_V1_STR}/users/records/{db_record.id}/{db_user.id}"

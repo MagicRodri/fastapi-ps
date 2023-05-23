@@ -75,7 +75,7 @@ example response:
 }
 ```
 
-## 3. /api/v1/users/records/ - POST creates a new record for the user. The request body should contain the user payload consisting of the user id and the token and the record file in wav format. Returns the created record's url for download.
+## 3. /api/v1/users/records/ - POST creates a new mp3 record for the user from a wav record. The request body should contain the user payload consisting of the user id and the token and the record file in wav format. Returns the created record's url for download.
 Example request:
 ```bash
 curl -X 'POST' \
